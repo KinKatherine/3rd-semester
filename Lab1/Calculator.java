@@ -9,8 +9,8 @@ public class Calculator //вариант 4
             throw new IOException("Invalid console arguments");
         }
 
-        double x;
-        double inaccuracy;
+        double x = 1;
+        double inaccuracy = 0.001;
         double previous;
         double current;
         double sum = 0;
@@ -24,7 +24,6 @@ public class Calculator //вариант 4
         catch (NumberFormatException e)
         {
             System.err.println("Invalid first argument");
-            return;
         }
 
         try
@@ -34,7 +33,6 @@ public class Calculator //вариант 4
         catch (NumberFormatException e)
         {
             System.err.println("Invalid second argument");
-            return;
         }
 
         previous = (Math.pow(-1, k) * Math.pow(x, k + 2)) / ((k + 1) * factorial((k+2)));
