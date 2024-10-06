@@ -3,8 +3,8 @@ import java.io.IOException;
 
 public abstract class Series
 {
-    protected   double start;
-    protected   double step;
+    protected final double start;
+    protected final double step;
 
     Series(double start, double step)
     {
