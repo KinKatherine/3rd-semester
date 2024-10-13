@@ -1,4 +1,4 @@
-public class FourthMethod
+public class FifthMethod
 {
     public static <T extends Number> double calculateAverage(T[] array)
     {
@@ -13,7 +13,7 @@ public class FourthMethod
             sum += i.doubleValue();
         }
 
-        return sum;
+        return sum / array.length;
     }
 
     public static void main(String[] args)
@@ -25,3 +25,4 @@ public class FourthMethod
         System.out.println("doubleArray: " + calculateAverage(doubleArray));
     }
 }
+

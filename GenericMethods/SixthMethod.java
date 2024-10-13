@@ -1,28 +1,23 @@
-public class SixthMethod
-{
-    public static <T extends Number> double calculateAverage(T[] array)
-    {
-        if (array.length == 0)
-        {
-            throw new IllegalArgumentException("Array is empty");
-        }
+import java.util.function.Predicate;
 
-        double sum = 0;
+public class SixthMethod
+{    public static <T> Integer calculateCount(T[] array, Predicate<T> predicate)
+{
+        int count = 0;
         for (T i : array)
         {
-            sum += i.doubleValue();
+            if (predicate.test(i))
+            {
+                count++;
+            }
         }
-
-        return sum / array.length;
+        return count;
     }
 
     public static void main(String[] args)
     {
-        Integer[] intArray = {1, 2, 3, 4, 5};
-        Double[] doubleArray = {1.5, 2.5, 3.5};
-
-        System.out.println("intArray: " + calculateAverage(intArray));
-        System.out.println("doubleArray: " + calculateAverage(doubleArray));
+        Integer[] array = {1, 2, 3, 4, 5};
+        Predicate<Integer> predicate = i -> i%2 == 0;
+        System.out.println(calculateCount(array,predicate));
     }
 }
-
