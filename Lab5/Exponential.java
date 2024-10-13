@@ -1,12 +1,17 @@
-public class Exponential extends Series
+public class Exponential extends Progression
 {
-    Exponential(double start, double step)
+    Exponential(int start, int step)
     {
         super(start, step);
     }
 
-    public double calculateElement(int number)
+    public int calculateElement(int number)
     {
-        return start * Math.pow(step,number - 1);
+        return (int) (super.getStart() * Math.pow(super.getStep(),number - 1));
+    }
+
+    public String extraConvertToString(int count)
+    {
+        return "Exponential: " + super.convertToString(count);
     }
 }

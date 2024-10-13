@@ -1,12 +1,18 @@
-public class Liner extends Series
+public class Liner extends Progression
 {
-    Liner(double start, double step)
+    Liner(int start, int step)
     {
         super(start, step);
     }
 
-    public double calculateElement(int number)
+    public int calculateElement(int number)
     {
-        return start +(number - 1) * step;
+        return super.getStart() +(number - 1) * super.getStep();
     }
+
+
+    public String extraConvertToString(int count) {
+        return "Line: " + super.convertToString(count);
+    }
+
 }
