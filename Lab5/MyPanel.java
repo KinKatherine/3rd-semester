@@ -38,7 +38,6 @@ public class MyPanel extends JPanel
         add(createSecondPanel());
         add(createThirdPanel());
         add(createFourthPanel());
-
         Initialize();
     }
 
@@ -165,7 +164,7 @@ public class MyPanel extends JPanel
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            textArea.setText(null);
+                textArea.setText(null);
             }
         });
 
@@ -196,9 +195,6 @@ public class MyPanel extends JPanel
     {
         JPanel panel2 = new JPanel();
         panel2.setLayout(new BorderLayout());
-
-        panel2.add(textArea, BorderLayout.CENTER);
-
         panel2.add(scroll, BorderLayout.CENTER);
 
         return panel2;
